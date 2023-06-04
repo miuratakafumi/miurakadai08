@@ -9,24 +9,24 @@ import UIKit
 
 class Tab2ViewController: UIViewController {
     // ラベルを配置
-    @IBOutlet private weak var tab2Label: UILabel!
+    @IBOutlet private weak var label: UILabel!
     // スライダーを配置
-    @IBOutlet private weak var tab2Slider: UISlider!
+    @IBOutlet private weak var slider: UISlider!
     
     // スライダーの値を変更するメソッド
     @IBAction private func sliderValueChanged(_ sender: UISlider) {
         // データモデルクラスのスライダープロパティの値を更新
         DataModel.shared.sliderValue = sender.value
         // ラベルにスライダーの値を表示
-        tab2Label.text = String(tab2Slider.value)
+        label.text = String(slider.value)
     }
     
     // ビュー切り替え時のメソッド
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         // スライダーの値を更新
-        tab2Slider.value = DataModel.shared.sliderValue
+        slider.value = DataModel.shared.sliderValue
         // ラベルにスライダーの値を表示
-        tab2Label.text = String(tab2Slider.value)
+        label.text = String(slider.value)
     }
 }
